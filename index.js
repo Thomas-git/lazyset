@@ -26,6 +26,7 @@ lazyset
   .command('watch <dir>')
   .description('watch directory and automically resize any new images')
   .option('-w, --width [width]')
+  .option('-q, --quality [quality]')
   .action(function (dir, ops) {
       if (ops.width == undefined) {
         missingWidth();
@@ -33,7 +34,7 @@ lazyset
       else {
         var widths = ops.width.split(',');
         log('Start writing, I\'ll take care of the images');
-        watcher(dir, widths);
+        watcher(dir, widths,parseInt(ops.quality));
       }
   });
 
@@ -41,6 +42,7 @@ lazyset
   .command('create <path>')
   .description('manually resize chosen image')
   .option('-w, --width [width]')
+  .option('-q, --quality [quality]')
   .action(function (path, ops) {
       if (ops.width == undefined) {
         missingWidth();
@@ -50,7 +52,7 @@ lazyset
         var file = path.split('/').pop();
         var widths = ops.width.split(',');
         log('Resized images coming right up!');
-        resize.createImg(dir, file, widths);
+        resize.createImg(dir, file, widths,parseInt(ops.quality));
       }
   });
 

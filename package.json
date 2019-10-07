@@ -1,6 +1,6 @@
 {
   "name": "lazyset",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "automate the creation of responsive images for srcset attribute",
   "keywords": [
     "srcset",

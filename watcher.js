@@ -7,7 +7,7 @@ when image added, create replicas at desired widths
 var resize = require('./resize'); // to generate new images
 var chokidar = require('chokidar'); // to watch directory
 
-module.exports = function (dir, widths) {
+module.exports = function (dir, widths,quality) {
   var selfCreated = []; // store created images
 
   // initialize watcher
@@ -24,7 +24,7 @@ module.exports = function (dir, widths) {
         // make sure new file is not the one created by task
         if (selfCreated.indexOf(newFile) <= -1) {
           console.log("deteced new file:" + " " + newFile);
-          selfCreated = resize.createImg(dir, newFile, widths);
+          selfCreated = resize.createImg(dir, newFile, widths,quality);
         }
       })
 
