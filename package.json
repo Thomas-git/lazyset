@@ -18,9 +18,9 @@
     "url": "https://github.com/alidcastano/Lazyset"
   },
   "dependencies": {
-    "chokidar": "^3.0.2",
+    "chokidar": "^3.2.1",
     "commander": "^2.9.0",
-    "jimp": "^0.2.27"
+    "jimp": "^0.8.4"
   },
   "scripts": {
     "test:watch": "node index.js watch ./sample/ --width 400,700,1200",
